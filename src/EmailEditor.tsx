@@ -15,11 +15,11 @@ interface EmailEditorProps {
   mjBody?: string;
 }
 
-const DEFAULT_MOCK = JSON.stringify(
-  { 'user.name': 'John Doe', action_button: 'Open website', action_url: 'https://example.com/welcome' },
-  null,
-  2,
-);
+const DEFAULT_MOCK = `{
+  "user.name": "John Doe",
+  "action_button": "Open website",
+  "action_url": "https://example.com/welcome"
+}`;
 
 export function EmailEditor({
   initialMd = '',

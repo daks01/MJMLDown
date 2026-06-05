@@ -23,7 +23,7 @@ function App() {
   return (
     <EmailEditor
       initialMd="# Hello, {{user.name}}!"
-      mjBody={`<mj-body><mj-section><mj-column>{{markdown_body}}</mj-column></mj-section></mj-body>`}
+      initialMockData='{"user.name":"John Doe"}'
       onSave={({ md, html, mockData }) => {
         // md — raw markdown
         // html — compiled MJML→HTML, placeholders preserved
@@ -39,7 +39,7 @@ function App() {
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `initialMd` | `string` | `''` | Initial markdown |
-| `initialMockData` | `string` | — | Initial mock JSON (built-in defaults when omitted) |
+| `initialMockData` | `string` | — | Initial mock data as JSON string |
 | `onSave` | `({ md, html, mockData }) => void` | — | Fired on Save |
 | `showMockEditor` | `boolean` | `true` | Show/hide the mock data editor |
 | `mockEditorHeight` | `number \| string` | `180` | Mock editor height |

@@ -24,6 +24,12 @@ The Team
 </mj-button>
 `;
 
+const INITIAL_MOCK_DATA = `{
+  "user.name": "John Doe",
+  "action_button": "Open website",
+  "action_url": "https://example.com/welcome"
+}`;
+
 function App() {
   const [saveResult, setSaveResult] = useState<{ md: string; html: string; mockData: string } | null>(null);
 
@@ -32,6 +38,7 @@ function App() {
       <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
         <EmailEditor
           initialMd={INITIAL_MD}
+          initialMockData={INITIAL_MOCK_DATA}
           onSave={(result) => setSaveResult(result)}
         />
       </div>
