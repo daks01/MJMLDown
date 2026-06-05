@@ -67,9 +67,43 @@
 .editorWrapper {
   flex: 1;
   min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.editorContainer {
+  flex: 1;
+  min-height: 0;
+}
+
+.editorInfo {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  background: #252526;
+  color: #969696;
+  font-size: 11px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.editorInfo a {
+  color: #569cd6;
+  text-decoration: none;
+}
+
+.editorInfo a:hover {
+  text-decoration: underline;
+}
+
+.editorInfoHint {
+  margin-left: auto;
+  color: #777;
 }
 
 .mockSection {
+  flex-shrink: 0;
   border-top: 1px solid #333;
 }
 

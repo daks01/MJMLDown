@@ -111,20 +111,28 @@ export function EmailEditor({
       <div className={styles.body}>
         <div className={styles.leftPanel}>
           <div className={styles.editorWrapper}>
-            <Editor
-              height="100%"
-              defaultLanguage="markdown"
-              value={md}
-              onChange={(val) => setMd(val ?? '')}
-              theme="vs-dark"
-              options={{
-                minimap: { enabled: false },
-                fontSize: 14,
-                wordWrap: 'on',
-                scrollBeyondLastLine: false,
-                automaticLayout: true,
-              }}
-            />
+            <div className={styles.editorInfo}>
+              <a href="https://www.markdownguide.org/cheat-sheet/" target="_blank" rel="noopener">Markdown</a>
+              <a href="https://documentation.mjml.io/" target="_blank" rel="noopener">MJML</a>
+              <a href="https://mustache.github.io/mustache.5.html" target="_blank" rel="noopener">Mustache</a>
+              <span className={styles.editorInfoHint}>Not all markdown syntax is supported</span>
+            </div>
+            <div className={styles.editorContainer}>
+              <Editor
+                height="100%"
+                defaultLanguage="markdown"
+                value={md}
+                onChange={(val) => setMd(val ?? '')}
+                theme="vs-dark"
+                options={{
+                  minimap: { enabled: false },
+                  fontSize: 14,
+                  wordWrap: 'on',
+                  scrollBeyondLastLine: false,
+                  automaticLayout: true,
+                }}
+              />
+            </div>
           </div>
           {showMockEditor && (
             <div className={styles.mockSection}>
